@@ -1,0 +1,10 @@
+{
+  "custom/user": {
+    "format": "󰍜",
+    "min-length": 4,
+    "max-length": 4,
+    "on-click": "sh -c '~/.config/rofi/launchers/type-3/launcher.sh'",
+    "on-click-right": "pkill -SIGUSR2 waybar",
+    "tooltip-format": "Open app launcher"
+  }
+}
