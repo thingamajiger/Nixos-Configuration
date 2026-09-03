@@ -48,9 +48,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("bash -c 'sleep 3 && waybar'")
     hl.exec_cmd("dunst")
     hl.exec_cmd("thunar --daemon")
-    hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
-    hl.exec_cmd("nwg-dock-hyprland -d -p bottom -a center -i 48 -mb 10 -l overlay -nolauncher -hd 0 -s style.css")
-    hl.exec_cmd("~/.config/hypr/scripts/dock-fullscreen.sh")
+    hl.exec_cmd("~/bin/dock-fullscreen.sh")
 
     -- hyprpaper intentionally disabled
 
@@ -70,7 +68,8 @@ hl.config({
         kb_layout = "us",
         follow_mouse = 1,
         sensitivity = 0,
-
+        accel_profile = flat,
+ 
         touchpad = {
             natural_scroll = false,
         },
@@ -246,13 +245,13 @@ local mainMod = "SUPER"
 
 hl.bind(
     "XF86AudioRaiseVolume",
-    hl.dsp.exec_cmd("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 1%+"),
+    hl.dsp.exec_cmd("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"),
     { locked = true, repeating = true }
 )
 
 hl.bind(
     "XF86AudioLowerVolume",
-    hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"),
+    hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
     { locked = true, repeating = true }
 )
 
@@ -423,16 +422,6 @@ hl.bind(
 -- ==========================================
 -- WINDOW RULES
 -- ==========================================
-
-hl.window_rule({
-    name = "thunar-opacity",
-    match = {
-        class = "thunar",
-    },
-
-    opacity = "0.80 0.80",
-})
-
 
 -- XWayland video bridge
 

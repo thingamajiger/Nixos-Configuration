@@ -1,202 +1,288 @@
-/* Thunar theme */
+/* Thunar */
 
-/* =============================================================================
-   Global Resets
-   ============================================================================= */
-
-.thunar * {
-    outline: none;
-    border: none;
+.thunar,
+.thunar.background,
+.thunar window,
+.thunar headerbar,
+.thunar .titlebar,
+.thunar .standard-view,
+.thunar .frame.standard-view,
+.thunar .sidebar,
+.thunar statusbar,
+.thunar header.top,
+.thunar .view {
+    background-color: alpha(#13171A, 0.2);
 }
 
-/* =============================================================================
-   Window & Background
-   ============================================================================= */
-
-.thunar.background {
-    background: #131317;
-}
-
-.thunar .titlebar {
-    background: inherit;
-}
-
-.thunar .titlebutton.close {
-    margin: 0 15px 0 0;
-}
-
-/* =============================================================================
-   Layout Containers
-   ============================================================================= */
-
-/* Paned separator between sidebar and main view */
-.thunar paned > separator {
-    min-width: 4px;
-    margin-right: -7px;
-    margin-left: -7px;
-    background: none;
-    background-image: none;
-    box-shadow: none;
-}
-
-
-/* Main file view frame */
-.thunar .frame.standard-view {
-    padding: 10px;
-    margin: 10px 15px 0 0;
-    border-radius: 15px;
-    background-color: #1b1b1f;
-    animation: fading 400ms ease forwards;
-    opacity: 0;
-    animation-delay: 250ms;
-}
-
-.thunar .frame.standard-view .view:not(.rubberband),
+/* Keep the actual file contents transparent */
+.thunar .frame.standard-view .view,
 .thunar .frame.standard-view .view *:not(.rubberband) {
     background-color: transparent;
 }
 
-.thunar .frame.standard-view .view *:selected {
-    color: #b7c4ff;
+/* Selection */
+.thunar .view:selected {
+    background-color: alpha(#13171A, 0.2);
 }
 
-.thunar .rubberband {
-    background-color: alpha(#b7c4ff, 0.15);
-    border: 1px solid alpha(#b7c4ff, 0.15);
-}
-
-
-/*  Tabs */
-.thunar header.top {
-    background: none;
-    padding: 0 10px 0 0;
-    margin: 3px 0 -3px -2px;
-}
-
-.thunar header.top tabs .reorderable-page {
-    margin: 0;
-    transition: all ease 300ms;
-}
-.thunar header.top tabs .reorderable-page + .reorderable-page {
-    margin: 0 0 0 10px;
-}
-
-.thunar header.top tabs .reorderable-page:hover {
-    background-color: alpha(#b7c4ff, 0.08);
-
-}
-.thunar header.top tabs .reorderable-page:checked {
-    color: #b7c4ff;
-    background-color: alpha(#b7c4ff, 0.15);
-
-}
-
-/* =============================================================================
-   Sidebar Navigation
-   ============================================================================= */
-
-.thunar .sidebar {
-    padding: 0 20px;
-    background: none;
-    animation: fading 600ms ease forwards;
-    animation-delay: 100ms;
-    opacity: 0;
-}
-
+/* Sidebar */
 .thunar .sidebar .view {
-    padding: 8px 4px;
-    border-radius: 10px;
-    background: none;
-    transition: all ease 300ms;
+    background-color: transparent;
 }
 
-.thunar .sidebar .view:hover {
-    background: alpha(#e4e1e7, 0.1);
+/* Tabs */
+.thunar header.top {
+    background-color: transparent;
 }
 
-.thunar .sidebar .view:selected {
-    background: alpha(#b7c4ff, 0.15);
-    color: #b7c4ff;
+/* Path bar */
+.thunar .location-button.path-bar-button:not(:checked) {
+    background-color: transparent;
 }
-
-/* =============================================================================
-   Path Bar & Location Buttons
-   ============================================================================= */
-
-.thunar .path-bar-button {
-    margin: 0;
-    padding: 8px 5px;
-    transition: all ease 0.4s;
+.thunar headerbar,
+.thunar headerbar *,
+.thunar .titlebar,
+.thunar .titlebar *,
+.thunar decoration,
+.thunar window {
+    background: transparent;
+    background-color: transparent;
+    box-shadow: none;
 }
+ 
+/* ============================================================
+   Thunar - consistent transparent surfaces
+   ============================================================ */
 
-.thunar .location-button.toggle:checked,
-.thunar .path-bar-button.toggle:checked {
-    padding: 8px 25px;
-    background: alpha(#b7c4ff, 0.15);
-    color: #b7c4ff;
+/* Main window + GTK client-side decoration */
+.thunar,
+.thunar.background,
+.thunar window,
+.thunar headerbar,
+.thunar .titlebar {
+    background-color: alpha(#13171A, 0.55);
+    background-image: none;
     box-shadow: none;
 }
 
+/* Navigation / path bar */
+.thunar .path-bar,
+.thunar .location-bar,
+.thunar .path-bar-button,
+.thunar .location-button,
+.thunar .path-bar-button:not(:checked),
 .thunar .location-button.path-bar-button:not(:checked) {
-    background-color: #1b1b1f;
+    background-color: alpha(#13171A, 0.55);
+    background-image: none;
+    box-shadow: none;
 }
 
-.thunar .location-button.path-bar-button:not(:checked):hover {
-    background: alpha(#b7c4ff, 0.08);
-    color: alpha(#b7c4ff, 0.8);
+/* Main file-view container */
+.thunar .frame.standard-view {
+    background-color: alpha(#13171A, 0.55);
+    background-image: none;
+    box-shadow: none;
 }
 
-.thunar .location-button.toggle+.location-button.toggle:checked {
-    margin-left: 0px;
-    padding: 0 25px;
+/* Actual file-view surface */
+.thunar .frame.standard-view .view,
+.thunar .frame.standard-view .view:hover {
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+}
+/* ============================================================
+   Thunar - kill Adwaita state styling
+   ============================================================ */
+
+/* Path/navigation bar */
+.thunar .path-bar,
+.thunar .location-bar,
+.thunar .path-bar-button,
+.thunar .location-button,
+.thunar .location-button.path-bar-button {
+    background-color: alpha(#13171A, 0.55);
+    background-image: none;
+    box-shadow: none;
+    border-image: none;
 }
 
+/* Every state GTK can apply */
+.thunar .path-bar:hover,
+.thunar .path-bar:focus,
+.thunar .path-bar:active,
+.thunar .path-bar:checked,
+.thunar .location-bar:hover,
+.thunar .location-bar:focus,
+.thunar .location-bar:active,
+.thunar .path-bar-button:hover,
+.thunar .path-bar-button:active,
+.thunar .path-bar-button:checked,
+.thunar .location-button:hover,
+.thunar .location-button:active,
+.thunar .location-button:checked {
+    background-color: alpha(#13171A, 0.55);
+    background-image: none;
+    box-shadow: none;
+    border-image: none;
+}
+
+/* Actual text entry if Thunar switches to editable location */
+.thunar entry,
+.thunar entry:hover,
+.thunar entry:focus,
+.thunar entry:active {
+    background-color: alpha(#13171A, 0.55);
+    background-image: none;
+    box-shadow: none;
+    border-image: none;
+}
+
+}
+
+/* Thunar top bars */
+.thunar menubar,
+.thunar toolbar,
+.thunar headerbar,
 .thunar .titlebar {
-    padding: 15px 0 5px 0;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    border: none;
 }
 
-/* =============================================================================
-   Buttons
-   ============================================================================= */
-
-.thunar button.toggle:checked {
-    color: #b7c4ff;
+/* Keep top bars identical when Thunar is unfocused */
+.thunar menubar:backdrop,
+.thunar toolbar:backdrop,
+.thunar headerbar:backdrop,
+.thunar .titlebar:backdrop {
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    border: none;
 }
 
-.thunar .image-button {
-    padding: 8px;
-    margin: 0 0 0 8px;
-    transition: all ease 0.4s;
+/* Path bar */
+.thunar .path-bar,
+.thunar .location-bar {
+    background-color: alpha(#13171A, 0.55);
+    background-image: none;
+    box-shadow: none;
+    border: none;
 }
 
-/* =============================================================================
-   Status Bar
-   ============================================================================= */
-
-.thunar statusbar {
-    background-color: #1b1b1f;
-    border-radius: 15px;
-    padding: 10px 10px;
-    margin: 15px 5px 15px -10px;
-    color: #e4e1e7;
+.thunar .path-bar:backdrop,
+.thunar .location-bar:backdrop {
+    background-color: alpha(#13171A, 0.55);
+    background-image: none;
+    box-shadow: none;
+    border: none;
+}
+/* Thunar navigation toolbar */
+.thunar toolbar,
+.thunar toolbar:backdrop,
+.thunar toolbar:hover {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
 }
 
+/* Everything inside the navigation toolbar */
+.thunar toolbar > *,
+.thunar toolbar > *:backdrop,
+.thunar toolbar > *:hover {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+/* Keep Thunar toolbar/menu text and icons bright when inactive */
 
-/* =============================================================================
-   Image preview
-   ============================================================================= */
-
-.thunar box.vertical .image {
-    margin: 15px;
+.thunar toolbar,
+.thunar toolbar:backdrop,
+.thunar menubar,
+.thunar menubar:backdrop {
+    color: #fcfcfc;
 }
 
+/* Toolbar buttons */
+.thunar toolbar button,
+.thunar toolbar button:backdrop,
+.thunar toolbar button:hover,
+.thunar toolbar button:backdrop:hover {
+    color: #fcfcfc;
+}
 
-/* =============================================================================
-   Animation
-   ============================================================================= */
+/* Toolbar icons */
+.thunar toolbar image,
+.thunar toolbar image:backdrop {
+    color: #fcfcfc;
+}
 
-@keyframes fading {
-    to {
-        opacity: 1;
-    }
+/* Menu items */
+.thunar menubar > menuitem,
+.thunar menubar > menuitem:backdrop,
+.thunar menubar > menuitem:hover,
+.thunar menubar > menuitem:backdrop:hover {
+    color: #fcfcfc;
+}
+/* ============================================================
+   Thunar — keep text/icons bright when window is inactive
+   ============================================================ */
+
+/* Sidebar */
+.thunar ThunarShortcutsView,
+.thunar ThunarShortcutsView:backdrop {
+    color: #fcfcfc;
+}
+
+/* Frames */
+.thunar frame,
+.thunar frame:backdrop,
+.thunar .frame,
+.thunar .frame:backdrop {
+    color: #fcfcfc;
+}
+
+/* Path entry */
+.thunar #ThunarPathEntry,
+.thunar #ThunarPathEntry:backdrop {
+    color: #fcfcfc;
+}
+
+/* File/icon view */
+.thunar iconview,
+.thunar iconview:backdrop,
+.thunar .view,
+.thunar .view:backdrop {
+    color: #fcfcfc;
+}
+
+/* Force descendants to retain the same foreground */
+.thunar ThunarShortcutsView *,
+.thunar ThunarShortcutsView *:backdrop,
+.thunar frame *,
+.thunar frame *:backdrop,
+.thunar #ThunarPathEntry *,
+.thunar #ThunarPathEntry *:backdrop,
+.thunar iconview *,
+.thunar iconview *:backdrop {
+    color: #fcfcfc;
+}
+
+/* Match Thunar file view and path bar background */
+
+#ThunarPathEntry,
+#ThunarPathEntry:backdrop {
+    background-color: alpha(#13171A, 0.55);
+    background-image: none;
+    box-shadow: none;
+}
+
+ExoIconView,
+ExoIconView:backdrop {
+    background-color: alpha(#13171A, 0.55);
+    background-image: none;
+    box-shadow: none;
 }
