@@ -73,6 +73,7 @@ systemd.user.services.nixos-fake-graphical-session = {
   programs.hyprland = {
   enable = true;
   withUWSM = false;
+
 };
 
   xdg.portal = {
@@ -118,7 +119,6 @@ systemd.user.services.nixos-fake-graphical-session = {
 
   security.sudo.wheelNeedsPassword = true;
 
-
   # ==========================================================================
   # SERVICES
   # ==========================================================================
@@ -128,7 +128,6 @@ systemd.user.services.nixos-fake-graphical-session = {
   services.udisks2.enable = true;
 
   security.polkit.enable = true;
-
 
   # ==========================================================================
   # FONTS
@@ -218,7 +217,9 @@ systemd.user.services.nixos-fake-graphical-session = {
     socat
     pulseaudio
     unrar
-    
+    stoat-desktop    
+    prismlauncher
+    file-roller
 
     inputs.millennium.packages."${pkgs.system}".millennium-steam
 

@@ -49,9 +49,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("dunst")
     hl.exec_cmd("thunar --daemon")
     hl.exec_cmd("~/bin/dock-fullscreen.sh")
-
-    -- hyprpaper intentionally disabled
-
+    hl.exec_cmd("udiskie --tray")
     hl.exec_cmd("mkdir -p ~/.cache/awww")
     hl.exec_cmd("awww-daemon")
     hl.exec_cmd("sleep 2 && awww img /home/tmajig/Pictures/Wallpapers/abandoned.jpg")
@@ -223,6 +221,38 @@ hl.animation({
     style = "slide",
 })
 
+hl.animation({
+    leaf = "layersIn",
+    enabled = true,
+    speed = 5,
+    spring = "spring",
+    style = "slide"
+})
+
+hl.animation({
+    leaf = "layersOut",
+    enabled = true,
+    speed = 5,
+    spring = "spring",
+    style = "slide"
+})
+
+hl.animation({
+    leaf = "layersIn",
+    enabled = true,
+    speed = 5,
+    spring = "spring",
+    style = "slide"
+})
+
+hl.animation({
+    leaf = "layersOut",
+    enabled = true,
+    speed = 5,
+    spring = "spring",
+    style = "slide"
+})
+
 -- ==========================================
 -- DWINDLE
 -- ==========================================
@@ -346,9 +376,6 @@ for i = 1, 7 do
     )
 end
 
-hl.bind("SUPER + Z", function()
-    hl.plugin.hyprexpo.expo("toggle")
-end)
 
 -- Focus movement
 

@@ -10,6 +10,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprland.url = "github:hyprwm/Hyprland/efb50993780079460b0cbed1363e2166a2de1d9f9";
   };
 
   outputs = { self, nixpkgs, spicetify-nix, millennium, home-manager, ... }@inputs: {
@@ -33,13 +35,16 @@
 
         {
           home-manager = {
-  useGlobalPkgs = true;
-  useUserPackages = true;
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            backupFileExtension = "backup";
 
-  backupFileExtension = "backup";
+            extraSpecialArgs = {
+              inherit inputs;
+            };
 
-  users.tmajig = import ./main.nix;
-};
+            users.tmajig = import ./main.nix;
+          };
         }
       ];
     };

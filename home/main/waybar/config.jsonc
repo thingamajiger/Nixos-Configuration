@@ -101,7 +101,7 @@
 
   "custom/power": {
     "tooltip": false,
-    "on-click": "wlogout",
+     "on-click": "rofi -show power-menu -modi 'power-menu:rofi-power-menu --choices=suspend/reboot/shutdown'"
     "format": "⏻"
   },
  

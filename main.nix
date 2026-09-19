@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home.username = "tmajig";
@@ -11,6 +11,9 @@
     fastfetch
     btop
     cava
+    rofi-power-menu
+    udiskie
+    udisks
   ];
 
   # Programs
@@ -52,4 +55,5 @@ programs.lutris = {
   # GTK
   home.file.".config/gtk-3.0".source = ./home/main/gtk-3.0;
   home.file.".config/gtk-4.0".source = ./home/main/gtk-4.0;
+
 }

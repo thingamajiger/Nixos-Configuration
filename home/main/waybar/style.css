@@ -178,3 +178,12 @@ tooltip {
 #custom-volume:hover {
     color: @color9;
 }
+#custom-power {
+    padding: 0px 5px;
+    color: @color7;
+    transition: all .3s ease;
+}
+
+#custom-power:hover {
+    color: @color9;
+}

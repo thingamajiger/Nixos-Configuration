@@ -10,7 +10,8 @@
     "memory",
     "bluetooth",
     "network",
-    "battery"
+    "battery",
+    "custom/power"
 ],
 
 
@@ -100,5 +101,10 @@
     "signal": 8,
     "return-type": "text",
     "tooltip": true
+},
+"custom/power": {
+    "format": "󰐥",
+    "tooltip": "Power menu",
+    "on-click": "rofi -show power-menu -modi 'power-menu:rofi-power-menu --choices=suspend/reboot/shutdown'"
 },
 }
