@@ -308,7 +308,7 @@ hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("kitty"))
 
 hl.bind(
     mainMod .. " + S",
-    hl.dsp.exec_cmd("spotify-launcher")
+    hl.dsp.exec_cmd("/run/current-system/sw/bin/spotify")
 )
 
 hl.bind(
@@ -323,7 +323,7 @@ hl.bind(
 
 hl.bind(
     mainMod .. " + X",
-    hl.dsp.exec_cmd("pwvucontrol")
+    hl.dsp.exec_cmd("kitty --class wiremix -e wiremix")
 )
 
 hl.bind(

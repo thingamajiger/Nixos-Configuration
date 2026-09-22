@@ -220,6 +220,7 @@ systemd.user.services.nixos-fake-graphical-session = {
     stoat-desktop    
     prismlauncher
     file-roller
+    wiremix
 
     inputs.millennium.packages."${pkgs.system}".millennium-steam
 
