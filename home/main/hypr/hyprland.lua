@@ -318,7 +318,7 @@ hl.bind(
 
 hl.bind(
     mainMod .. " + B",
-    hl.dsp.exec_cmd("flatpak run app.zen_browser.zen")
+    hl.dsp.exec_cmd("zen-twilight")
 )
 
 hl.bind(

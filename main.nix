@@ -19,7 +19,7 @@
   # Programs
   programs.git.enable = true;
 
-programs.lutris = {
+  programs.lutris = {
   enable = true;
 
   protonPackages = with pkgs; [
@@ -55,5 +55,14 @@ programs.lutris = {
   # GTK
   home.file.".config/gtk-3.0".source = ./home/main/gtk-3.0;
   home.file.".config/gtk-4.0".source = ./home/main/gtk-4.0;
+
+  imports = [
+    inputs.zen-browser.homeModules.twilight
+  ];
+
+  programs.zen-browser = {
+    enable = true;
+    setAsDefaultBrowser = true;
+};
 
 }
